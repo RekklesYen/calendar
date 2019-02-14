@@ -1,0 +1,39 @@
+<div id="entry-app">
+  <nav class="navbar">
+    <span class="navbar-toggle" id="js-navbar-toggle" @click="showNav">
+      <i class="fas fa-bars"></i>
+    </span>
+    <a href="#" class="logo">Welcom to Here My Friend</a>
+    <ul class="main-nav" id="js-menu">
+      <li class="username nav-links" v-if="isLoggedIn">
+        <span>{{ currentUser }}</span>
+      </li>
+      <li v-if="isLoggedIn">
+        <router-link :to="{ name: 'todo' }" class="nav-links"
+          >Dashboard</router-link
+        >
+      </li>
+      <li v-if="!isLoggedIn">
+        <router-link :to="{ name: 'login' }" class="nav-links"
+          >Sign In</router-link
+        >
+      </li>
+      <li v-if="!isLoggedIn">
+        <router-link :to="{ name: 'register' }" class="nav-links"
+          >Create Account</router-link
+        >
+      </li>
+      <li v-if="isLoggedIn">
+        <a href="javascript:;" class="nav-links" @click="logout">Logout</a>
+      </li>
+    </ul>
+  </nav>
+  <transition
+    name="router-animate"
+    enter-active-class="animated fadeIn"
+    leave-active-class="animated fadeOut"
+    mode="out-in"
+  >
+    <router-view></router-view>
+  </transition>
+</div>

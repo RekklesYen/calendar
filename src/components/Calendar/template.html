@@ -1,0 +1,34 @@
+<div class="app_calender">
+  <div class="box">
+    <div class="calender">
+      <div class="dateinfo">
+        <div class="arrow" @click="changeHandler(-1)"><</div>
+        {{ year }}.{{ month_name[month] }}
+
+        <div class="arrow" @click="changeHandler(1)">></div>
+      </div>
+      <div class="head">
+        <div class="day" v-for="day in tags" :key="day">{{ day }}</div>
+      </div>
+      <div class="body">
+        <div
+          class="daybox"
+          v-for="(day,id) in init"
+          :key="day.num"
+          :class="id===selectedDay?'active':''"
+          @click="clickHandler(id)"
+          :style="get_pan(id)"
+        >
+          <div class="infos">
+            <div class="num">{{ day.num }}</div>
+            <div class="lunar">初一</div>
+          </div>
+          <div
+            class="eventdot"
+            :class="{ has_event: day.events.length>0 }"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

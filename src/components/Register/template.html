@@ -1,0 +1,37 @@
+<div class="login-form page-wrapper">
+  <h2 class="login-heading">Register</h2>
+  <div>
+    <form action="#" @submit.prevent="validateBeforeSubmit">
+      <div class="input-error" v-if="serverError">{{ serverError }}</div>
+      <div class="form-control">
+        <label for="email" class="input-label">Email </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="login-input"
+          v-model="username"
+          v-validate="'required|email'"
+          :class="{'inputErr' : errors.has('email')}"
+        />
+      </div>
+      <span class="validateErr">{{ errors.first('email') }}</span>
+      <div class="form-control">
+        <label for="password" class="input-label">Password </label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="login-input"
+          v-model="password"
+          v-validate="'required|min:6'"
+          :class="{'inputErr' : errors.has('password')}"
+        />
+      </div>
+      <span class="validateErr">{{ errors.first('password') }}</span>
+      <div class="btn-control">
+        <button type="submit" class="btn-submit">Create Account</button>
+      </div>
+    </form>
+  </div>
+</div>

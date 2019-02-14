@@ -1,0 +1,19 @@
+<div id="nav">
+  <div :class="{ btn_active : filter == 'all' }" @click="changfilter('all')">
+    All
+  </div>
+  |
+  <div
+    :class="{ btn_active : filter == 'active' }"
+    @click="changfilter('active')"
+  >
+    Active
+  </div>
+  |
+  <div
+    :class="{ btn_active : filter == 'complete' }"
+    @click="changfilter('complete')"
+  >
+    Complete
+  </div>
+</div>

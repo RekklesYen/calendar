@@ -1,0 +1,157 @@
+html {
+  color: #34495e;
+  background-color: #41b883;
+  font-family: '微軟正黑體';
+}
+#app {
+  text-align: center;
+  margin-top: 60px;
+}
+
+#list {
+  list-style: none;
+  padding: 0;
+}
+
+.todoInput {
+  margin: 20px auto;
+}
+.todoInput input {
+  font-size: 20px;
+  font-weight: 400;
+  border: none;
+  max-width: 600px;
+  padding: 10px 10px;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+}
+
+.todoListItem {
+  position: relative;
+  text-align: left;
+  max-width: 600px;
+  height: 50px;
+  line-height: 40px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px auto;
+  padding: 20px 10px;
+}
+.todoListItem .toggle {
+  position: absolute;
+  opacity: 1;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.todoListItem .toggle:checked + label {
+  color: #d9d9d9;
+  text-decoration: line-through;
+}
+.todoListItem label {
+  font-size: 16px;
+  word-break: break-all;
+  /* padding: 0px 30px 0px 45px; */
+  padding: 0px 30px 0px 45px;
+  height: 40px;
+  display: block;
+  line-height: 10px;
+  transition: color 0.4s;
+}
+
+.todoListItem .edit {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-size: 20px;
+  text-align: left;
+  width: calc(100% - 40px);
+  word-break: break-all;
+  padding: 0 10px;
+  margin: 0 auto;
+  height: 40px;
+  display: block;
+  line-height: 40px;
+  outline: none;
+}
+
+.todoListItem .destroy {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin: auto 10px;
+  font-size: 30px;
+  color: #af5b5e;
+}
+.todoListItem .destroy:after {
+  content: 'x';
+}
+
+.editor {
+  max-width: 620px;
+  width: 100%;
+  margin: 20px auto;
+}
+.toolbar {
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+.text {
+  border: 1px solid #ccc;
+  height: 80px;
+  padding: 10px 10px;
+  background-color: #fff;
+}
+
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-hourglass:after {
+  content: ' ';
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 6px;
+  box-sizing: border-box;
+  border: 26px solid #dfc;
+  border-color: #dfc transparent #dfc transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+.page-wrapper {
+  animation-duration: 0.2s;
+}

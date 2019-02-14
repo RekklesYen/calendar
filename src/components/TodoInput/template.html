@@ -1,0 +1,9 @@
+<div class="todoInput">
+  <input
+    type="text"
+    placeholder="待辦事項"
+    v-model="todo"
+    @keyup.enter.trim="submitHandler"
+    v-focus
+  />
+</div>

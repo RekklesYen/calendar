@@ -1,0 +1,103 @@
+.login-form {
+  max-width: 500px;
+  height: 320px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  background: #19a543;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -60%);
+}
+.login-heading {
+  position: absolute;
+  top: 8px;
+}
+.form-control {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.form-control label {
+  margin-right: 10px;
+}
+
+.input-label {
+  text-align: left;
+}
+.input-error {
+  margin-bottom: 16px;
+  font-size: 16px;
+  padding: 10px 16px;
+  color: #a94442;
+  background-color: #f3dede;
+  border-radius: 4px;
+}
+.btn-control {
+  position: relative;
+  bottom: -20px;
+  left: 135px;
+  display: flex;
+  flex-direction: column;
+  max-width: 100px;
+}
+.validateErr {
+  font-size: 12px;
+  color: #a94442;
+}
+.inputErr {
+  border: 2px solid red;
+}
+.success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  margin-bottom: 12px;
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 4px;
+}
+.page-wrapper {
+  animation-duration: 0.2s;
+}
+
+.lds-ring-contianer {
+  position: absolute;
+  right: 10px;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  // margin: 6px;
+  border: 3px solid #cef;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #cef transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

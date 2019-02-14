@@ -1,29 +1,64 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div
+    id="app"
+    class="page-wrapper"
+  >
+
+    <calendar></calendar>
+    <todoFilter></todoFilter>
+    <todoInput />
+    <div
+      class="lds-hourglass"
+      v-if="$store.state.loading"
+    ></div>
+
+    <div id='list'>
+      <todoListItem
+        v-for="item in todoIndex"
+        :key="item"
+        :index="item"
+      ></todoListItem>
     </div>
-    <router-view/>
+
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import todoInput from '@/components/TodoInput/index.vue'
+import todoListItem from '@/components/TodoListItem/index.vue'
+import calendar from '@/components/Calendar/index.vue'
+import todoFilter from '@/components/TodoFilter/index.vue'
+export default {
+  components: {
+    todoInput,
+    todoListItem,
+    calendar,
+    todoFilter
+  },
+  data() {
+    return {
+      select: -1
     }
+  },
+  computed: {
+    todoIndex() {
+      // return this.$store.getters['todoIndex']
+      return this.$store.getters.todoDBIndex(this.select)
+    }
+  },
+  methods: {
+    dateInfos(...args) {
+      this.select = args[0] + 1
+    }
+  },
+  created() {
+    // this.$store.dispatch('INIT_TODOS')
+    this.$eventBus.$on('dateInfos', this.dateInfos, this)
+    //this.$store.dispatch('REALTIME_LISTENERS')
+    // this.$store.dispatch('RETRIEVE_TODO')
   }
 }
+</script>
+
+<style src="@/assets/style.css">
 </style>
