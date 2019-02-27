@@ -20,9 +20,9 @@
 
 DEMO:
 
-![Register](https://github.com/RekklesYen/todolist_calendar/blob/master/gif/register.gif?raw=true 'Register')
+![Register](https://github.com/RekklesYen/calendar/blob/master/gif/register.gif?raw=true 'Register')
 
-![Login](https://github.com/RekklesYen/todolist_calendar/blob/master/gif/login.gif?raw=true 'Login')
+![Login](https://github.com/RekklesYen/calendar/blob/master/gif/login.gif?raw=true 'Login')
 
 ---
 
@@ -32,7 +32,7 @@ DEMO:
 
 DEMO:
 
-![Add](https://github.com/RekklesYen/todolist_calendar/blob/master/gif/add.gif?raw=true 'add')
+![Add](https://github.com/RekklesYen/calendar/blob/master/gif/add.gif?raw=true 'add')
 
 ---
 
@@ -42,4 +42,4 @@ DEMO:
 
 DEMO:
 
-![Update](https://github.com/RekklesYen/todolist_calendar/blob/master/gif/add.gif?raw=true 'Update')
+![Update](https://github.com/RekklesYen/calendar/blob/master/gif/add.gif?raw=true 'Update')
