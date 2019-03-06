@@ -54,8 +54,7 @@ let router = new Router({
     //   path: '*',
     //   redirect: '/all'
     // }
-  ],
-  mode: 'history'
+  ]
 })
 
 router.beforeEach((to, from, next) => {
